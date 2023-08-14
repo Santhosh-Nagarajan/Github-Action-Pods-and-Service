@@ -26,7 +26,7 @@ jobs:
         kubectl get serviceaccounts  
         kubectl create serviceaccount default
         kubectl config set-context --current --namespace=default
-        kubectl taint nodes  mildevkub020 node-role.kubernetes.io/master-
+        kubectl taint nodes  minikube node-role.kubernetes.io/master-
       
     - name: Deploy to Kubernetes
       run: |
