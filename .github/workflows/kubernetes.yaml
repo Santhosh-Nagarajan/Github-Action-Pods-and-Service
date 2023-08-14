@@ -29,6 +29,7 @@ jobs:
       run: |
         kubectl create serviceaccount default
         kubectl config set-context --current --namespace=default
+        kubectl taint nodes minikube node.kubernetes.io/not-ready-
 
     - name: Deploy to Kubernetes
       run: |
