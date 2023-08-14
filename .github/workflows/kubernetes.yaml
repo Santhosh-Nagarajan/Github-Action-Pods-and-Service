@@ -22,6 +22,9 @@ jobs:
 
     - name: Get pods
       run: kubectl get pods
+
+    - name: Get Service
+      run: kubectl get svc
       
     - name: Deploy to Kubernetes
       run: |
