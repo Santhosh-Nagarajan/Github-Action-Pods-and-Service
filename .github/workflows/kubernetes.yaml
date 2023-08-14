@@ -3,7 +3,7 @@ name: Deploy to Kubernetes
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - master  # Change this to your main branch name
 
 jobs:
   deploy:
@@ -15,7 +15,11 @@ jobs:
 
     - name: Set up Kubectl
       uses: azure/setup-kubectl@v1  # Action to set up kubectl
-
+    - name: minikube start
+      run: minikube start
+    - name: Minikube Dashboard
+      run: minikube dashboard
+      
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
