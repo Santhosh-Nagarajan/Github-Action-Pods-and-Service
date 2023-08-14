@@ -10,7 +10,7 @@ spec:
       image: vishwasanthosh/reactapp
       ports:
         - containerPort: 3080
-  serviceAccountName: default   
+     
 
 ---
 apiVersion: v1
