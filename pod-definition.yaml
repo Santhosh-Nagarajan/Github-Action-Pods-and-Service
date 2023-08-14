@@ -5,10 +5,9 @@ metadata:
   labels:
     app: react-app
 spec:
-  tolerations:
-    - key: node.kubernetes.io/not-ready
-      operator: Exists
-      effect: NoSchedule
+  nodeSelector:
+    dev: production
+  
       
   containers:
     - name: react-app-container
