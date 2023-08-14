@@ -1,0 +1,23 @@
+name: Deploy to Kubernetes
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # The runner to use
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2  # Action to checkout your repository
+
+    - name: Set up Kubectl
+      uses: azure/setup-kubectl@v1  # Action to set up kubectl
+
+    - name: Deploy to Kubernetes
+      run: |
+        kubectl apply -f pod-definition.yaml
+        kubectl apply -f service-definition.yaml
+        
