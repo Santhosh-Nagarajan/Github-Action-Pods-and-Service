@@ -40,4 +40,4 @@ jobs:
       run: kubectl get pods
     
     - name: Describe pod
-      run: kubectl describe pod react-app-pod
+      run: kubectl describe pod react-app-pod -n default
