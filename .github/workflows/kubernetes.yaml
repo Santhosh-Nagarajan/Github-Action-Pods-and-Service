@@ -23,6 +23,11 @@ jobs:
 
     - name: namespace 
       run: kubectl get ns
+    - name: Create Service 
+      run: |
+        kubectl get serviceaccounts  
+        kubectl create serviceaccount default
+        #kubectl config set-context --current --namespace=default
       
     - name: Deploy to Kubernetes
       run: |
