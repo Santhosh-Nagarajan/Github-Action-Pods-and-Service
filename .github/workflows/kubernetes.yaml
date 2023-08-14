@@ -25,7 +25,8 @@ jobs:
 
     - name: Get Service
       run: kubectl get svc
-    - name: Get Service
+      
+    - name: Create Service
       run: |
         kubectl get serviceaccounts  
         kubectl create serviceaccount default
@@ -34,5 +35,10 @@ jobs:
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
+
+    - name: Get pods
+      run: kubectl get pods
+    - name: Get Service
+      run: kubectl get svc
         
         
