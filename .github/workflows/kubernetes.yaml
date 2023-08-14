@@ -17,6 +17,9 @@ jobs:
       uses: azure/setup-kubectl@v1  # Action to set up kubectl
     - name: minikube start
       run: minikube start
+    - name: minikube tunnel format
+      run: minikube tunnel
+      
     - name: minikube metrics-server
       run: minikube addons enable metrics-server
 
