@@ -5,7 +5,7 @@ metadata:
   labels:
     app: react-app
 spec:
-  serviceAccountName: default 
+  serviceAccountName: kubernetes 
   containers:
     - name: react-app-container
       image: vishwasanthosh/reactapp
