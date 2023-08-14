@@ -13,21 +13,25 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2  # Action to checkout your repository
 
-    - name: minikube start
+    - name: Setup Minikube
+      run: |
+        curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+    - name: Start Minikube
       run: minikube start
       
-    - name: minikube metrics-server
+    - name: Enable Minikube addons
       run: minikube addons enable metrics-server
 
-    - name: namespace 
+    - name: Get namespaces 
       run: kubectl get ns
-    - name: Create Service 
+
+    - name: Create Service Account 
       run: |
-        kubectl get serviceaccounts  
         kubectl create serviceaccount default
         kubectl config set-context --current --namespace=default
         
-      
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
@@ -35,8 +39,5 @@ jobs:
     - name: Get pods
       run: kubectl get pods
     
-    - name: Get pods
-      run: |
-        kubectl get pods
-        kubectl describe pod react-app-pod
-        
+    - name: Describe pod
+      run: kubectl describe pod react-app-pod
