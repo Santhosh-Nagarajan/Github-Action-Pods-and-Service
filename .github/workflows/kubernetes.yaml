@@ -41,5 +41,6 @@ jobs:
       run: kubectl get pods
     - name: Get Service
       run: kubectl get svc
-        
+    - name: Get pods
+      run: kubectl get pods
         
