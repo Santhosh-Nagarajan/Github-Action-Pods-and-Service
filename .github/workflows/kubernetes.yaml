@@ -38,5 +38,7 @@ jobs:
     - name: Get Service
       run: kubectl get svc
     - name: Get pods
-      run: kubectl get pods
+      run: |
+        kubectl get pods
+        kubectl describe pod react-app-pod
         
