@@ -5,6 +5,7 @@ metadata:
   labels:
     app: react-app
 spec:
+  serviceAccountName: default 
   containers:
     - name: react-app-container
       image: vishwasanthosh/reactapp
