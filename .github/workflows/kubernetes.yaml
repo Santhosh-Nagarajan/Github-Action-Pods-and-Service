@@ -19,8 +19,8 @@ jobs:
       run: minikube start
     - name: minikube metrics-server
       run: minikube addons enable metrics-server
-    - name: Minikube Dashboard
-      run: minikube dashboard
+    - name: Minikube Tunnel
+      run: minikube tunnel
       
     - name: Deploy to Kubernetes
       run: |
