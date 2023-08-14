@@ -35,8 +35,7 @@ jobs:
 
     - name: Get pods
       run: kubectl get pods
-    - name: Get Service
-      run: kubectl delete pod  react-app-pod
+    
     - name: Get pods
       run: |
         kubectl get pods
