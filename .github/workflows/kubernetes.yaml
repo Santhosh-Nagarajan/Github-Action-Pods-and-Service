@@ -19,9 +19,12 @@ jobs:
       run: minikube start
     - name: minikube metrics-server
       run: minikube addons enable metrics-server
+
+    - name: Get pods
+      run: kubectl get pods
       
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
-        kubectl apply -f service-definition.yaml
+        
         
