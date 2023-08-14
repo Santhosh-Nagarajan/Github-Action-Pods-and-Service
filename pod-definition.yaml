@@ -24,4 +24,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3080
-  type: LoadBalancer
+  type: NodePort
