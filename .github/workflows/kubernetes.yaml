@@ -17,9 +17,7 @@ jobs:
       run: |
         curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
         sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
-    - name: Start Minikube
-      run: minikube start
+        minikube start
       
     - name: Enable Minikube addons
       run: minikube addons enable metrics-server
@@ -31,13 +29,13 @@ jobs:
       run: |
         kubectl create serviceaccount default
         kubectl config set-context --current --namespace=default
-        
+
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
 
     - name: Get pods
-      run: kubectl get pods
+      run: kubectl get pods -n default
     
     - name: Describe pod
       run: kubectl describe pod react-app-pod -n default
