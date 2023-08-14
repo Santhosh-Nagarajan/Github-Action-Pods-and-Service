@@ -21,17 +21,8 @@ jobs:
     - name: minikube metrics-server
       run: minikube addons enable metrics-server
 
-    - name: Get pods
-      run: kubectl get pods
-
-    - name: Get Service
-      run: kubectl get svc
-      
-    - name: Create Service
-      run: |
-        kubectl get serviceaccounts  
-        kubectl create serviceaccount default
-        kubectl config set-context --current --namespace=default
+    - name: namespace 
+      run: kubectl get nodes
       
     - name: Deploy to Kubernetes
       run: |
