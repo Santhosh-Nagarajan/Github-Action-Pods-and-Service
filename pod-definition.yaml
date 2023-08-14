@@ -5,13 +5,12 @@ metadata:
   labels:
     app: react-app
 spec:
-  serviceAccountName: kubernetes 
   containers:
     - name: react-app-container
       image: vishwasanthosh/reactapp
       ports:
         - containerPort: 3080
-
+  serviceAccountName: default   
 
 ---
 apiVersion: v1
