@@ -4,11 +4,7 @@ metadata:
   name: react-app-pod
   labels:
     app: react-app
-spec:
-  nodeSelector:
-    dev: production
-  
-      
+spec:    
   containers:
     - name: react-app-container
       image: vishwasanthosh/reactapp
