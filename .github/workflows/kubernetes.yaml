@@ -22,7 +22,7 @@ jobs:
       run: minikube addons enable metrics-server
 
     - name: namespace 
-      run: kubectl get nodes
+      run: kubectl get ns
       
     - name: Deploy to Kubernetes
       run: |
