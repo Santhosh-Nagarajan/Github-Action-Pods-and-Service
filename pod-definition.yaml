@@ -4,17 +4,7 @@ metadata:
   name: react-app-pod
   labels:
     app: react-app
-spec:
-  tolerations:
-  - key: node.kubernetes.io/not-ready
-    operator: Exists
-    effect: NoExecute
-    
-  tolerations:
-    - key: "node.kubernetes.io/not-ready"
-      operator: "Exists"
-      effect: "NoExecute"
-      
+spec: 
   containers:
     - name: react-app-container
       image: vishwasanthosh/reactapp
