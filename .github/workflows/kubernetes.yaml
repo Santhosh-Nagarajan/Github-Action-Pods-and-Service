@@ -37,7 +37,14 @@ jobs:
         kubectl apply -f pod-definition.yaml
 
     - name: Get pods
-      run: kubectl get pods -n default
-    
+      run: |
+        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod
+        
     - name: Describe pod
       run: kubectl describe pod react-app-pod -n default
