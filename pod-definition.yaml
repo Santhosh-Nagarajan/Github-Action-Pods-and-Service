@@ -10,7 +10,7 @@ spec:
     - name: react-app-container
       image: nginx
       ports:
-        - containerPort: 3080
+        - containerPort: 80
      
 
 ---
