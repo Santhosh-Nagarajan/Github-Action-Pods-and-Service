@@ -38,13 +38,13 @@ jobs:
 
     - name: Get pods
       run: |
-        kubectl get pods react-app-pod
-        kubectl get pods react-app-pod
-        kubectl get pods react-app-pod
-        kubectl get pods react-app-pod
-        kubectl get pods react-app-pod
-        kubectl get pods react-app-pod
-        kubectl get pods react-app-pod
+        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod -n default
         
     - name: Describe pod
       run: kubectl describe pod react-app-pod -n default
