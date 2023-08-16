@@ -1,17 +1,16 @@
----
 apiVersion: v1
 kind: Pod
 metadata:
   name: react-app-pod
   labels:
     app: react-app
-spec: 
+spec:
   containers:
     - name: react-app-container
-      image: nginx
+      image: vishwasanthosh/reactapp
       ports:
-        - containerPort: 80
-     
+        - containerPort: 3080
+
 
 ---
 apiVersion: v1
@@ -24,5 +23,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80
-  type: NodePort
+      targetPort: 3080
+  type: LoadBalancer
