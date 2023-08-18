@@ -35,19 +35,11 @@ jobs:
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
-        kubectl apply -f pod-definition.yaml
-        kubectl apply -f pod-definition.yaml
-        kubectl apply -f pod-definition.yaml
+        
 
     - name: Get pods
       run: |
-        kubectl get pods react-app-pod -n default
-        kubectl get pods react-app-pod -n default
-        kubectl get pods react-app-pod -n default
-        kubectl get pods react-app-pod -n default
-        kubectl get pods react-app-pod -n default
-        kubectl get pods react-app-pod -n default
-        kubectl get pods react-app-pod -n default
+        kubectl get pods react-app-pod
         
     - name: Describe pod
-      run: kubectl describe pod react-app-pod -n default
+      run: kubectl describe pod react-app-pod
