@@ -35,6 +35,9 @@ jobs:
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
+        kubectl apply -f pod-definition.yaml
+        kubectl apply -f pod-definition.yaml
+        kubectl apply -f pod-definition.yaml
 
     - name: Get pods
       run: |
