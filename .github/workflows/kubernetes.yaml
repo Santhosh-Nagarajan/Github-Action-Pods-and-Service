@@ -39,8 +39,8 @@ jobs:
 
     - name: Get pods
       run: |
-        kubectl describe pod react-app-pod
-        kubectl get pods react-app-pod
+        kubectl get pod
+        
         
     - name: Describe pod
       run: kubectl describe pod react-app-pod
