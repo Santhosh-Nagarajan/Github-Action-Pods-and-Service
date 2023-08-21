@@ -40,7 +40,7 @@ jobs:
     - name: Get pods
       run: |
         kubectl get pod
-        */5 * * * * kubectl get pod > /path/to/output/file.log 2>&1
+        
         
         
     - name: Describe pod
