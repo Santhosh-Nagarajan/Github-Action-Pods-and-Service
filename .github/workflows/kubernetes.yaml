@@ -35,6 +35,8 @@ jobs:
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f pod-definition.yaml
+        chmod +x get_pod_after_delay.sh
+        ./get_pod_after_delay.sh
         
 
     - name: Get pods
